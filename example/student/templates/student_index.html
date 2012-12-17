@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Student Management{% endblock %}
+{% block head %}
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/datatable_custom.css" />
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/student_index.css" />
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.blockUI.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/student_index.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+$(document).ready(function() {
+    oTable0 = $('#assignments').dataTable( {
+                "bJQueryUI": true,
+                "bProcessing": false,
+                "sAjaxSource": "/student/getassignedassignments/"
+                });
+
+    oTable1 = $('#selectiveassignments').dataTable( {
+                "bJQueryUI": true,
+                "bProcessing": false,
+                "sAjaxSource": "/student/getcustompapers/"
+                });
+     });
+</script>
+
+{% endblock%}
+
+{% block content %}
+<div class="container_12">
+
+    <div style="text-align:left;margin:0;float:left;clear:both;">
+        <h1 style="float:left">Assignments Assigned By Teacher</h1>
+    </div>
+
+    <table class="datatable_display" id="assignments">
+        <thead>
+            <tr>
+                <th width="20%">Assignment/Paper</th>
+                <th width="20%">Test_Due</th>
+                <th width="10%">Teacher</th>
+                <th width="25%">Description</th>
+                <th width="10%">Status</th>
+                <th width="15%">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+
+    <div style="text-align:left;margin:2em 0 0 0;float:left;clear:both;">
+        <h1 style="float:left;margin-bottom:0;">Selective Papers</h1>
+    </div>
+
+    <div style="text-align:left;margin:2em 0 0 0;float:right">
+        <a href="/student/custompaper/" class='addBtn'>Add Selective Paper</a>
+    </div>
+
+    <table class="datatable_display" id="selectiveassignments">
+        <thead>
+            <tr>
+                <th >PAPER NAME</th>
+                <th >ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+
+<div style="margin:1em auto;">
+    <table width=940><tbody><tr>
+        <td width="50%">
+            <a class="blueBtn" style="margin:0 2em 0 0;float:right;" href="{% url info_modify %}">USER PROFILE</a>
+        </td>
+        <td width="50%" >
+            <a class="blueBtn" style="margin:0 0 0 2em;float:left;" href="{% url report_student %}">REPORT</a>
+        </td>
+    </tr></tbody></table>
+</div>
+</div>
+<div style='display:none;'  id="dialog-warning" title="Assignment Due Warning">
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{ message|safe }}</p>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}
+{% block tail %}
+
+{% endblock%}

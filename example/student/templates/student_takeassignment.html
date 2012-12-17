@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title%} Taking an Assigned Assignment {% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/student_takeassignment.css" type="text/css" />
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/nyroModal.css" />
+<script type="text/javascript" src="{{ STATIC_URL }}js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/ckeditor/ckeditor.adapter.jquery.js"></script>
+<script type="text/javascript">
+    var csrfvalue='{{ csrf_token }}';
+    var qids = {{qids}};
+    var qnames = {{qnames|safe}};
+    var paperid = {{paper.id}};
+</script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.nyroModal.custom.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/student_takeassignment.js"></script>
+{% endblock %}
+
+{% block content %}
+<div id='content'>
+    <div class="showList wide">
+        <div class="rttip">Assigned Assignment</div>
+        <table id="assignmenthead" style="float:left;">
+            <tbody>
+                <tr>
+                    <td colspan="3"><label class="short" for="assignment">Assignment:</label><span>{{assignment.assignmentname}}</span></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label class="short" for="Teacher">Teacher:</label><span>{{assignment.teacher.user.username}}</span></td>
+                    <td><label for="Student" class="short">Student:</label><span>{{student.user.username}}</span></td>
+                </tr>
+                <tr>
+					<td><label for="" class="short">Question:</label><span id="question_name_show"></span></td>
+                    <td><label for="" class="short">Process:</label><span id="question_process_show">2/10</span></td>
+                    <td><label for="" class="short">Time:</label><span id="time_show">24/60</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <table  class="singleContent">
+            <tbody>
+                <tr>
+                    <td class="rtfwrapper">
+                        <div id="question_content">
+                            <textarea id="question_editor" name="question_editor"></textarea>
+                        </div>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>			      	
+                        <h4 class="ui-widget-header" id="thumbnails_header" >Possible Diagrams</h4>
+                        <div id="thumbnails" class="ui-widget-content ui-state-default">
+                            <ul id="possible_diagrams" class="gallery ui-helper-reset ui-helper-clearfix  ">
+                            </ul>
+                        </div>
+                    </td>			     
+                </tr>     		
+                <tr><td colspan='3'> &nbsp;</td></tr>
+                <tr>
+                    <td class="rtfwrapper">
+                        <div id="answer_content">
+                            <textarea id="answer_editor" name="answer_editor"></textarea>
+                        </div>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>			      	
+	                    <h4 class="ui-widget-header" id="selected_header">Selected Diagrams</h4>
+                        <div id="stuthumbnails" class="ui-widget-content ui-state-default ">
+                            <ul id="selected_diagrams" class="gallery ui-helper-reset ui-helper-clearfix  ">
+                        </div>
+                    </td>			     
+                </tr>     		
+            </tbody>
+        </table>
+		<p class="longp btngroup">
+		<a  class="blueBtn shortBtn" id='first'>&lt;&lt; First</a>
+        <a  class="blueBtn shortBtn" id='previous'>&lt; Previous</a>
+        <a  class="blueBtn shortBtn" id='next'>Next &gt;</a>
+        <a  class="blueBtn shortBtn" id='last'>Last &gt;&gt;</a>
+        <a  class="greenBtn" id='submit1'>Submit</a>
+        </p>
+    </div>
+</div>
+<div style='display:none;'  id="dialog-process" title="Processing">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Processing your request...</p>
+	<div id="progressbar"></div>
+</div>
+{% endblock %}

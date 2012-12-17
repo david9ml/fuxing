@@ -1,0 +1,13 @@
+#thumbnails{
+    width: 250px; 
+    padding: 1%;
+    min-height: 200px;
+    height:300px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+* html #thumbnails{
+    height:300px;
+}
+
+

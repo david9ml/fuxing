@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %} Students' Assignment Report {% endblock %}
+{% block head %}
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/datatable_custom.css" />
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/report_paper.css" />
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.dataTables.columnFilter.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/report_paper.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/django.csrf.js"></script>
+<script type="text/javascript">
+    var pids = "{{ pids }}";
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="container_12">
+    <div class="grid_12">
+        <div style="text-align:center;margin:0;clear:both;">
+            <h1> STUNDENTS ASSIGNMENT RECORD </h1>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="grid_12">
+        <div class="grid_3 alpha">
+            <form class="content" method="post" action="">{% csrf_token %}
+                <p style="float:left;">
+                <label class="title1" for="id_year" style="float:left;margin-top:0;">Year:</label>
+                {{ form.year }}
+                {%if form.year.errors %}
+                {% for error in form.year.errors %}
+                <div class="warning">{{ error }}</div>
+                {% endfor %}
+                {% endif %}
+                </p>
+                <p style="float:left;"><label class="title1" for="id_subject" style="float:left;margin-top:0;">Subject:</label>
+                {{ form.subject }}
+                {%if form.subject.errors %}
+                {% for error in form.subject.errors %}
+                <div class="warning">{{ error }}</div>
+                {% endfor %}
+                {% endif %}
+                </p>
+
+                <p style="float:left;"><label class="title1" for="id_level" style="float:left;margin-top:0;">Level:</label>
+                {{ form.level }}
+                {%if form.level.errors %}
+                {% for error in form.level.errors %}
+                <div class="warning">{{ error }}</div>
+                {% endfor %}
+                {% endif %}
+                </p>
+                <p style="clear:both;width:250px;">
+                <a href=javascript:submitform() class="blueBtn" id="button" style="min-width:100px;width:100px" >Please Select</a>
+                </p>
+
+            </form>
+        </div>
+
+
+        <div class="grid_8">
+            <table class="datatable_display" id="data_list">
+                <thead>
+                    <tr>
+                        <th width="5%">YEAR</th>
+                        <th width="5%">SUBJECT</th>
+                        <th width="5%">LEVEL</th>
+                        <th width="20%">STUDENT</th>
+                        <th width="20%">ASSIGNMENT</th>
+                        <th width="20%">MARK ATTAINED</th>
+                        <th width="20%">VIEW DETAILED SCRIPT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="grid_4 alpha">
+                <a href=javascript:selectall() class="blueBtn" id="buttonselect" style="float:right;margin-top:5em;min-width:100px;width:100px">Select All</a>
+            </div>
+            <div class="grid_4 omega">
+                <a href=javascript:checkdetailpaper() class="greenBtn" id="button" style="text-align:center;float:right;margin-top:5em;min-width:100px;width:100px">Process</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear">
+
+        <form name='formx1' class="content" method="post" action='{% url report_studentanswer %}'>{% csrf_token %}
+            <input type="hidden" id='paperids' name="paperids" value=''>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+

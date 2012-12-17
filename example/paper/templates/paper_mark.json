@@ -1,0 +1,12 @@
+{ "aaData": [
+	{% for p,s,m in takedpaperlist %}
+    {% if forloop.last %}
+	["{{ p.year.yearname }}"," {{ p.subject.subjectname }}", "{{ p.level.levelname }}","{{ s.user.username }}", "{{ p.assignment.assignmentname }}/{{ p.papername }}", "{{m}}",
+		"<input type='checkbox' name ='{pid:{{ p.id }}, stuid:{{s.user.id}}}'/>View "]
+    {% else %}
+	["{{ p.year.yearname }}"," {{ p.subject.subjectname }}", "{{ p.level.levelname }}","{{ s.user.username }}", "{{ p.assignment.assignmentname }}/{{ p.papername }}", "{{m}}",
+		"<input type='checkbox' name ='{pid:{{ p.id }}, stuid:{{s.user.id}}}'/>View "],
+    {% endif %}
+    {% endfor %}
+	
+] }
