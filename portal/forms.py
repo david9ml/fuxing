@@ -1,3 +1,4 @@
+'''
 from django import forms
 from intemass.entity.models import Randomcode
 from django.contrib.auth.models import User
@@ -113,3 +114,4 @@ class ForgotPasswordForm(forms.Form):
             return self.cleaned_data['email']
         else:
             raise forms.ValidationError("Wrong email")
+'''

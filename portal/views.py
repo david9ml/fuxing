@@ -1,3 +1,4 @@
+'''
 import logging
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
@@ -119,3 +120,4 @@ def forgot_password(request):
             return redirect('login')
     return render_to_response('forgot_password.html', {'form': form},
                               context_instance=RequestContext(request))
+'''
