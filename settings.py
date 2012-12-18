@@ -147,6 +147,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django_nose',
     'fuxing.portal',
+    'fuxing.room',
+    'fuxing.activity',
     'debug_toolbar',
 )
 
