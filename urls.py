@@ -1,12 +1,17 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
-#from django.views.generic import RedirectView
+from django.views.generic import RedirectView
 admin.autodiscover()
 
 urlpatterns = patterns('',
                        url(r'^admin/', include(admin.site.urls)),
+                       url(r'^favicon\.ico$', RedirectView.as_view(url='/static/favicon.ico')),
+                       url(r'^portal/', include('fuxing.portal.urls')),
                        )
 
+urlpatterns = patterns('fuxing.portal.views',
+                       url(r'^$','home', name='home'),
+                      )
 '''
 #portal
 urlpatterns += patterns('fuxing.portal.views',
