@@ -11,7 +11,7 @@ urlpatterns = patterns('',
                        )
 
 urlpatterns += patterns('fuxing.portal.views',
-                       url(r'^$','home', name='home'),
+                       url(r'^$|^cn/$','home', name='home'),
                       )
 
 '''
