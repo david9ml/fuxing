@@ -7,11 +7,13 @@ urlpatterns = patterns('',
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^favicon\.ico$', RedirectView.as_view(url='/static/favicon.ico')),
                        url(r'^portal/', include('fuxing.portal.urls')),
+                       url(r'^activity/', include('fuxing.activity.urls')),
                        )
 
-urlpatterns = patterns('fuxing.portal.views',
+urlpatterns += patterns('fuxing.portal.views',
                        url(r'^$','home', name='home'),
                       )
+
 '''
 #portal
 urlpatterns += patterns('fuxing.portal.views',
