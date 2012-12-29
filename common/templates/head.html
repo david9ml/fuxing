@@ -1,3 +1,4 @@
+{% load string_cut %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -21,7 +22,7 @@
                 	</div>
                 	<div class="header-right">
                         <ul class="list-lang">
-                            <li class="current"><a href={{ request.get_full_path }}cn/>中文</a></li>
+                            <li class="current"><a id='chinese_link'>中文</a></li>
                             <li><a href="/en/">English</a></li>
                         </ul>
                         <ul class="list-login">
