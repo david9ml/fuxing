@@ -4,18 +4,16 @@ import sys
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 PROJECTPATH = os.path.dirname(__file__)
-NLTKDATAPATH = os.path.join(PROJECTPATH, "nltk_data")
 UPLOADFOLDER = os.path.join(PROJECTPATH, "images/questionimages")
 UPLOADPREFIX = 'questionimages'
 THUMBNAILFOLDER = os.path.join(PROJECTPATH, "images/thumbnails")
 GENERATED_IMG = os.path.join(PROJECTPATH, "images/generated_img")
 THUMBNAILPREFIX = 'thumbnails'
-EXAM_TIMEOUT_PREFIX = '__assignment_time'
 
 LOGIN_URL = "/accounts/login/"
 
 ADMINS = (
-    ('kenneth', 'kenneth@thingkingtop.com'),
+    ('yanchao', 'yanchao727@gmail.com'),
 )
 MANAGERS = ADMINS
 
@@ -29,9 +27,9 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',     # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': 'intemass',               # Or path to database file if using sqlite3.
-            'USER': 'twoeigmp_marking',               # Not used with sqlite3.
-            'PASSWORD': '1qazmarking',                # Not used with sqlite3.
+            'NAME': 'fuxing',               # Or path to database file if using sqlite3.
+            'USER': 'demo',               # Not used with sqlite3.
+            'PASSWORD': '1',                # Not used with sqlite3.
             'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
             'PORT': '',                               # Set to empty string for default. Not used with sqlite3
         }
@@ -204,9 +202,9 @@ LOGGING = {
 }
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.163.com'
-EMAIL_HOST_USER = 'twoeigmp@163.com'
-EMAIL_HOST_PASSWORD = '28mptest'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'peoplelinkedfuxing@gmail.com'
+EMAIL_HOST_PASSWORD = '1'
 EMAIL_PORT = 25
 
 try:
