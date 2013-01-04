@@ -1,11 +1,7 @@
 from django.conf.urls.defaults import patterns, url
-from intemass.classroom.views import ClassroomDelete
 
-urlpatterns = patterns('intemass.classroom.views',
-    url(r'^getall/$','getall',name='classroom_getall'),
-    url(r'^add/$','add',name='classroom_add'),
-    url(r'^updatename/$','classroom_updatename',name='classroom_updatename'),
-    url(r'^delete/$',ClassroomDelete.as_view(),name='classroom_delete'),
-	url(r'^getstudents/$','getstudents',name='classroom_getstudents'),
+urlpatterns = patterns('fuxing.room.views',
+    url(r'^listall/$|^listall/cn/$','listall',name='listall'),
+    #url(r'^delete/$',ClassroomDelete.as_view(),name='classroom_delete'),
 	)
 

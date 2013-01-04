@@ -8,6 +8,7 @@ urlpatterns = patterns('',
                        url(r'^favicon\.ico$', RedirectView.as_view(url='/static/favicon.ico')),
                        url(r'^portal/', include('fuxing.portal.urls')),
                        url(r'^activity/', include('fuxing.activity.urls')),
+                       url(r'^room/', include('fuxing.room.urls')),
                        )
 
 urlpatterns += patterns('fuxing.portal.views',

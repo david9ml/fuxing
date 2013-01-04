@@ -1,7 +1,11 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+
 def info(request):
     return render_to_response('activity_info.html', context_instance=RequestContext(request))
+
+def admin(request):
+    return render_to_response('activity_admin.html', context_instance=RequestContext(request))
 
 def activity(request):
     return render_to_response('activity.html', context_instance=RequestContext(request))

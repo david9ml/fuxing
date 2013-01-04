@@ -1,3 +1,10 @@
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+def listall(request):
+    return render_to_response('listallroom.html', context_instance=RequestContext(request))
+
+
+'''
 import logging
 from intemass.classroom.models import Classroom
 from django.shortcuts import render_to_response, redirect, get_object_or_404
@@ -223,3 +230,4 @@ def classroom_updatename(request):
                 response_data['roomname'] = classroom.roomname
                 response_data['state'] = 'success'
     return HttpResponse(simplejson.dumps(response_data), mimetype="application/json")
+'''

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}HOME{% endblock%}
+{% block head %}
+{% endblock %}
+
+{% block content %}
+
+<div id="wrap">
+	<div class="container">
+	
+    <div class="events-admin">
+    	<form action="">
+        <p>活动名称：<input name="activity_name" type="text" style="width:300px; height:20px;" /></p>
+        <p>添加图片：<input type="file" name="activity_piecture" /></p>
+        <p>活动描述：</p>
+        <p><textarea cols="100" rows="20p" name="activity_text" value=""></textarea></p>
+        <p><input type="submit" value="发布新活动"/></p>
+        </form>
+    </div>
+    
+    </div>
+</div>
+
+{% endblock %}
