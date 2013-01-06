@@ -1287,7 +1287,7 @@ margin: 0 auto;
 
 #header { margin-bottom: 20px }
 
-.header-main { background: #000000 url(picture/menu.jpg) repeat-x left bottom;padding-bottom: 4px }
+.header-main { background: url(../picture/header_menu.jpg) repeat-x left bottom;padding-bottom: 4px }
 
 	.header-main a,.header-main a:hover { color: #ffffff }
 
@@ -1361,15 +1361,19 @@ padding: 0 15px 0 0;
 
 .newplace-box,.box-usual-big { padding-bottom: 20px }
 
-/********************/
-.box-usual img {float: left;}
+/**********/
+.content-box img {float: left;}
 
-.box-usual p {float: right; width: 300px;}
+.content-box p {
+	float: right; 
+	position: relative;
+	top: 50px;
+	width: 300px; }
 
 .box-usual-b-l {
 	float: left;
 	width: 540px;
-	padding: 0 20px 20px }
+	padding: 0 20px 20px } 
 
 .box-usual-b-r {
 	float: right;
@@ -1417,7 +1421,7 @@ padding: 0 15px 0 0;
 
 .logo h1 {float: right; position:relative; top: 50px;}*/
 
-.date { float:left;width: 220px }
+.date { float:right;width: 220px }
 
 	.date ul,.date ul li { float: left }
 
@@ -1430,7 +1434,7 @@ padding: 0 15px 0 0;
 			width: 60px;
 			height: 60px;
 			margin: 0px 10px 10px 0px;
-			background: url(/assets/icons-f07c18686ace62b87acbb38cf0236a9f.gif) no-repeat left top }
+			background: url(../picture/dates-1.jpg); }
 
 			.date ul li.last { margin: 0 0 10px 0 }
 
@@ -1451,11 +1455,12 @@ padding: 0 15px 0 0;
 				text-align: right;
 				margin: 0 3px 0 0 }
 
-			.date ul li.color1 { background: url(/assets/icons-f07c18686ace62b87acbb38cf0236a9f.gif) no-repeat 0px -140px }
+			.date ul li.color1 { background: url(../picture/date-2.jpg); }
 
 			.date ul li.color2 { background: url(/assets/icons-f07c18686ace62b87acbb38cf0236a9f.gif) no-repeat 0px -70px }
 
 			.date ul li.color3 { background: url(/assets/icons-f07c18686ace62b87acbb38cf0236a9f.gif) no-repeat 0px -211px }
+
 
 .banner-r {
 	float: right;
@@ -2123,24 +2128,36 @@ margin-bottom: 30px;
 
 	.room-box h3 a,.room-box h3 a:hover { color:#ffffff;display: block }
 
-.room-content {
+	.room-content {
 	float: left;
 	width: 770px;
 	border: 1px dotted #808080;
 	padding: 10px 14px 20px }
 	
-.room-img { float:left; }
+	.room-img { float:left; }
 
-.room-img img {
-	width: 480px;
-	height: 300px; }
-
-.room-text {
-	float: right;
-	width: 270px;
-	height: 300px;
-	overflow: hidden }
+	.room-img img {
+		width: 480px;
+		height: 300px; }
+	
+	.room-text {
+		float: right;
+		width: 270px;
+		height: 300px;
+		overflow: hidden }
 	
 .room-reserve {
-	float: right;
-	position: relative; }
+	float: left;
+	position: relative;
+	left: 100px;
+	width: 800px;
+	height: 40px; }
+	
+	.room-reserve a {
+		float: right; 
+		font-size: 120%; 
+		color: #660099; }
+	
+.login_admin {
+	position: relative;
+	left: 35%; }
