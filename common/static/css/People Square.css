@@ -1285,9 +1285,16 @@ width:1000px;
 margin: 0 auto;
 }
 
-#header { margin-bottom: 20px }
+#header { 
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
 
-.header-main { background: #000000 url(picture/menu.jpg) repeat-x left bottom;padding-bottom: 4px }
+.header-main { 
+    background: #000000 url(picture/menu.jpg) repeat-x left bottom;
+    padding-bottom: 4px;
+    border-radius:  5px;
+}
 
 	.header-main a,.header-main a:hover { color: #ffffff }
 
