@@ -22,6 +22,8 @@ class Reservation(models.Model):
     customer = models.ForeignKey(Customer, verbose_name=u'Customer')
     room = models.ForeignKey(Room, verbose_name=u'Room')
     date_created = models.DateTimeField('reservation date', default=datetime.datetime.now)
+    begin_date = models.DateTimeField('begin date', blank=True, null=True)
+    end_date = models.DateTimeField('end date', blank=True, null=True)
     deadline = models.DateTimeField('reservation deadline', blank=True, null=True)
     description = models.CharField(max_length=1000, blank=True, null=True, verbose_name=u'Description')
 

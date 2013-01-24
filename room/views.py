@@ -1,11 +1,16 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from forms import RoomsreserveForm
 
 def listall(request):
     return render_to_response('listallroom.html', context_instance=RequestContext(request))
 
 def roomsreserve(request):
-    return render_to_response('rooms_reserve.html', context_instance=RequestContext(request))
+    form = RoomsreserveForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            print form.cleaned_data['roomname']
+    return render_to_response('rooms_reserve.html', {'form':form}, context_instance=RequestContext(request))
 
 '''
 import logging

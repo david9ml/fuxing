@@ -1,8 +1,21 @@
 import logging
 from django import forms
-from intemass.portal.models import SProfile
+from fuxing.room.models import Room
 
 logger = logging.getLogger(__name__)
+
+class RoomsreserveForm(forms.Form):
+    def __init__(self,*args,**kwargs):
+        super(RoomsreserveForm,self).__init__(*args,**kwargs)
+        rooms = Room.objects.all()
+        rm = [(r.id,r.roomname) for r in rooms]
+        self.fields['roomname'] = forms.ChoiceField(choices=rm,label="Roomname")
+
+    def clean_roomname(self):
+        roomname = self.clean_data['roomname']
+        if roomname =='Room_A':
+            raise forms.ValidationError('Invalid roomname!')
+        return roomname
 '''
 class ClassDetailForm(forms.Form):
     def __init__(self,*args,**kwargs):

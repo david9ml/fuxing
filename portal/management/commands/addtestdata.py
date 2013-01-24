@@ -16,16 +16,16 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         wangping=User.objects.create_user("wangping","wangping@yahoo.cn","1")
-        wangping_customer = Customer.objects.create(user=wangping, gender="female", cellphone="13611722769", addition="Room609 4 days")
+        wangping_customer = Customer.objects.create(user=wangping, gender="female", phone='56666666', cellphone="13611722769", addition="Room609 4 days")
         rooms = []
         try:
-            room1 = Room.objects.create(roomname='room611', volume=50,  pic_intro='/user/pictures/', txt_intro='room_text')
+            room1 = Room.objects.create(roomname='Room_A', volume=50,  pic_intro='/user/pictures/', txt_intro='room_text')
             rooms.append(room1)
-            rooms.append(Room.objects.create(roomname='Room601', volume=50,  pic_intro='/user/pictures/', txt_intro='room_text'))
-            rooms.append(Room.objects.create(roomname='room609', volume=50,  pic_intro='/user/pictures/', txt_intro='room_text'))
-            rooms.append(Room.objects.create(roomname='room612', volume=50,  pic_intro='/user/pictures/', txt_intro='room_text'))
-            rooms.append(Room.objects.create(roomname='room613', volume=50,  pic_intro='/user/pictures/', txt_intro='room_text'))
-            rooms.append(Room.objects.create(roomname='room619', volume=50,  pic_intro='/user/pictures/', txt_intro='room_text'))
+            rooms.append(Room.objects.create(roomname='Room_B', volume=50,  pic_intro='/user/pictures/', txt_intro='room_text'))
+            rooms.append(Room.objects.create(roomname='Room_C', volume=50,  pic_intro='/user/pictures/', txt_intro='room_text'))
+            rooms.append(Room.objects.create(roomname='Room_D', volume=50,  pic_intro='/user/pictures/', txt_intro='room_text'))
+            rooms.append(Room.objects.create(roomname='Room_E', volume=50,  pic_intro='/user/pictures/', txt_intro='room_text'))
+            rooms.append(Room.objects.create(roomname='Room_F', volume=50,  pic_intro='/user/pictures/', txt_intro='room_text'))
         except:
             pass
         for room in rooms:
@@ -42,6 +42,6 @@ class Command(BaseCommand):
             wangping_customer.save();
         except:
             pass
-        res1 = Reservation.objects.create(customer=wangping_customer, room=room1, description='test')
+        res1 = Reservation.objects.create(customer=wangping_customer, room=room1, begin_date='2013-1-2', end_date='2013-2-2', description='test')
         res1.save()
         self.stdout.write('Add test data successfully\n')

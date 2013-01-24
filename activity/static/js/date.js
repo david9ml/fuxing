@@ -44,7 +44,7 @@
 
 			var events = [ 	{ "EventID": 1, "StartDateTime": new Date(2013, 0, 12), "Title": "10:00 pm - EventTitle1", "URL": "events_info.html", "Description": "This is a sample event description", "CssClass": "Meeting" },
 							{ "EventID": 2, "Date": "2013-01-28T00:00:00.0000000", "Title": "9:30 pm - this is a much longer title", "URL": "events_info.html", "Description": "This is a sample event description", "CssClass": "Meeting" },
-							{ "EventID": 3, "StartDateTime": new Date(2013, 0, 20), "Title": "9:30 pm - this is a much longer title", "URL": "events_info.html", "Description": "This is a sample event description", "CssClass": "Meeting" },
+							{ "EventID": 3, "StartDateTime": new Date(2013, 0, 20), "Title": "9:30 pm - this is a much longer title blah blah blah", "URL": "events_info.html", "Description": "This is a sample event description", "CssClass": "Meeting" },
 							{ "EventID": 4, "StartDateTime": "2013-04-14", "Title": "9:30 pm - this is a much longer title", "URL": "events_info.html", "Description": "This is a sample event description", "CssClass": "Meeting" }
 			];
 
