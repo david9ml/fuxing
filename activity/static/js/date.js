@@ -20,7 +20,7 @@
 					return true;
 				},
 				onEventBlockClick: function(event) {
-					alert("block clicked");
+					//alert("block clicked");
 					return true;
 				},
 				onEventBlockOver: function(event) {
@@ -31,7 +31,7 @@
 					return true;
 				},
 				onDayLinkClick: function(date) {
-					alert(date.toLocaleDateString());
+					//alert(date.toLocaleDateString());
 					return true;
 				},
 				onDayCellClick: function(date) {
