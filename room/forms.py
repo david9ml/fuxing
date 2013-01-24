@@ -9,12 +9,14 @@ class RoomsreserveForm(forms.Form):
         super(RoomsreserveForm,self).__init__(*args,**kwargs)
         rooms = Room.objects.all()
         rm = [(r.id,r.roomname) for r in rooms]
-        self.fields['roomname'] = forms.ChoiceField(choices=rm,label="Roomname")
-
+        self.fields['roomname'] = forms.ChoiceField(choices=rm,label="Roomname", required=False)
+    #roomname = forms.ChoiceField(choices=rm,label="Roomname")
     def clean_roomname(self):
-        roomname = self.clean_data['roomname']
-        if roomname =='Room_A':
+        roomname = self.cleaned_data['roomname']
+        '''
+        if roomname == '':
             raise forms.ValidationError('Invalid roomname!')
+        '''
         return roomname
 '''
 class ClassDetailForm(forms.Form):
