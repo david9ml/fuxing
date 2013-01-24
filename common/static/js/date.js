@@ -15,13 +15,13 @@
 					//$.jMonthCalendar.ReplaceEventCollection(events);
 					return true;
 				},
-				onEventLinkClick: function(event) { 
+				onEventLinkClick: function(event) {
 					//alert("event link click");
-					return true; 
+					return true;
 				},
-				onEventBlockClick: function(event) { 
+				onEventBlockClick: function(event) {
 					alert("block clicked");
-					return true; 
+					return true;
 				},
 				onEventBlockOver: function(event) {
 					//alert(event.Title + " - " + event.Description);
@@ -30,45 +30,42 @@
 				onEventBlockOut: function(event) {
 					return true;
 				},
-				onDayLinkClick: function(date) { 
+				onDayLinkClick: function(date) {
 					alert(date.toLocaleDateString());
-					return true; 
+					return true;
 				},
-				onDayCellClick: function(date) { 
+				onDayCellClick: function(date) {
 					alert(date.toLocaleDateString());
-					return true; 
+					return true;
 				}
 			};
-			
+
 			/************************Andy Yan***********************************/
-			
+
 			var events = [ 	{ "EventID": 1, "StartDateTime": new Date(2013, 0, 12), "Title": "10:00 pm - EventTitle1", "URL": "events_info.html", "Description": "This is a sample event description", "CssClass": "Meeting" },
 							{ "EventID": 2, "Date": "2013-01-28T00:00:00.0000000", "Title": "9:30 pm - this is a much longer title", "URL": "events_info.html", "Description": "This is a sample event description", "CssClass": "Meeting" },
 							{ "EventID": 3, "StartDateTime": new Date(2013, 0, 20), "Title": "9:30 pm - this is a much longer title", "URL": "events_info.html", "Description": "This is a sample event description", "CssClass": "Meeting" },
 							{ "EventID": 4, "StartDateTime": "2013-04-14", "Title": "9:30 pm - this is a much longer title", "URL": "events_info.html", "Description": "This is a sample event description", "CssClass": "Meeting" }
 			];
-			
+
 			//var newoptions = { };
 			//var newevents = [ ];
 			//$.jMonthCalendar.Initialize(newoptions, newevents);
 
-			
+
 			$.jMonthCalendar.Initialize(options, events);
-			
-			
-			
-			
+
 			var extraEvents = [	{ "EventID": 5, "StartDateTime": new Date(2013, 0, 11), "Title": "10:00 pm - EventTitle1", "URL": "#", "Description": "This is a sample event description", "CssClass": "Birthday" },
 								{ "EventID": 6, "StartDateTime": new Date(2013, 0, 20), "Title": "9:30 pm - this is a much longer title", "URL": "#", "Description": "This is a sample event description", "CssClass": "Meeting" }
 			];
-			
-			$("#Button").click(function() {					
+
+			$("#Button").click(function() {
 				$.jMonthCalendar.AddEvents(extraEvents);
 			});
-			
+
 			$("#ChangeMonth").click(function() {
 				$.jMonthCalendar.ChangeMonth(new Date(2013, 1, 1));
 			});
         });
-		
+
 /*</script>*/

@@ -1,8 +1,11 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+
 def listall(request):
     return render_to_response('listallroom.html', context_instance=RequestContext(request))
 
+def roomsreserve(request):
+    return render_to_response('rooms_reserve.html', context_instance=RequestContext(request))
 
 '''
 import logging
