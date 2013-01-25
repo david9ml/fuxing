@@ -1,15 +1,50 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from forms import RoomsreserveForm
+from django.contrib.auth.models import User
+from fuxing.portal.models import Customer
+from fuxing.room.models import Room, Reservation
+import logging
+logger = logging.getLogger(__name__)
 
 def listall(request):
     return render_to_response('listallroom.html', context_instance=RequestContext(request))
 
 def roomsreserve(request):
-    form = RoomsreserveForm(request.POST)
     if request.method == 'POST':
+        form = RoomsreserveForm(request.POST)
         if form.is_valid():
-            print form.cleaned_data['roomname']
+            roomname_id = form.cleaned_data['roomname']
+            begin_date = form.cleaned_data['begin_date']
+            end_date = form.cleaned_data['end_date']
+            customer_name = form.cleaned_data['customer_name']
+            phone = form.cleaned_data['phone']
+            cellphone = form.cleaned_data['cellphone']
+            email = form.cleaned_data['email']
+            logger.info("roomname_id:%s" %roomname_id)
+            logger.info("begin_date:%s" %begin_date)
+            logger.info("end_date:%s" %end_date)
+            logger.info("customer_name:%s" %customer_name)
+            logger.info("phone:%s" %phone)
+            logger.info("cellphone:%s" %cellphone)
+            logger.info("email:%s" %email)
+            user = User.objects.get(username=customer_name)
+            if user is None:
+                new_user = User.objects.create_user(customer_name, email, '1')
+                customer = Customer.objects.create(user=new_user, phone = phone, cellphone=cellphone, addition='not defined')
+                Customer.save()
+            else:
+                customer = Customer.objects.get(user=user, phone = phone, cellphone=cellphone, addition='not defined')
+            try:
+                res = Reservation.objects.create(customer=customer, room=Room.objects.get(pk=roomname_id), begin_date=begin_date, end_date=end_date, description='none')
+                res.save()
+            except Exception, e:
+                print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+                print e
+                print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+
+    else:
+        form = RoomsreserveForm(initial={'roomname':'RoomNotSelected'})
     return render_to_response('rooms_reserve.html', {'form':form}, context_instance=RequestContext(request))
 
 '''

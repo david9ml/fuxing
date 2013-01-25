@@ -32,15 +32,55 @@
         </select>
         -->
         </p>
-        <p>开始日期：<input name="start_date" type="text" /> （日期格式：2013-1-1，代表2013年1月1日）</p>
-        <p>结束日期：<input name="end_date" type="text" /></p>
+        <p>开始日期：<!--<input name="start_date" type="text" />--> {{ form.begin_date}} （日期格式：2013-1-1，代表2013年1月1日）
+            {%if form.begin_date.errors %}
+            {% for error in form.begin_date.errors %}
+            <div class="warning">{{ error }}</div>
+            {% endfor %}
+            {% endif %}
+        </p>
+        <p>结束日期：<!--<input name="end_date" type="text" />--> {{ form.end_date}} （日期格式：2013-1-1，代表2013年1月1日）
+            {%if form.end_date.errors %}
+            {% for error in form.end_date.errors %}
+            <div class="warning">{{ error }}</div>
+            {% endfor %}
+            {% endif %}
+        </p>
         </fieldset>
         <fieldset>
         <legend>客户信息</legend>
-        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 姓名：<input name="guest_admin" type="text" /></p>
-        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 电话：<input name="guest_tel" type="text" /></p>
-        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 手机：<input name="guest_tel" type="text" /></p>
-        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 邮箱：<input name="guest_email" type="text" /></p>
+        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 姓名：<!--<input name="guest_admin" type="text" />-->
+            {{ form.customer_name }}
+            {%if form.customer_name.errors %}
+            {% for error in form.customer_name.errors %}
+            <div class="warning">{{ error }}</div>
+            {% endfor %}
+            {% endif %}
+        </p>
+        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 电话：<!--<input name="guest_tel" type="text" />-->
+            {{ form.phone }}
+            {%if form.phone.errors %}
+            {% for error in form.phone.errors %}
+            <div class="warning">{{ error }}</div>
+            {% endfor %}
+            {% endif %}
+       </p>
+        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 手机：<!--<<input name="guest_tel" type="text" />-->
+            {{ form.cellphone }}
+            {%if form.cellphone.errors %}
+            {% for error in form.cellphone.errors %}
+            <div class="warning">{{ error }}</div>
+            {% endfor %}
+            {% endif %}
+        </p>
+        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 邮箱：<!--<input name="guest_email" type="text" />-->
+            {{ form.email }}
+            {%if form.email.errors %}
+            {% for error in form.email.errors %}
+            <div class="warning">{{ error }}</div>
+            {% endfor %}
+            {% endif %}
+        </p>
         </fieldset>
         <p><input type="submit" value="提交" /></p>
         </form>

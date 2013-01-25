@@ -1,3 +1,4 @@
+#coding=utf-8
 import logging
 from django import forms
 from fuxing.room.models import Room
@@ -9,15 +10,25 @@ class RoomsreserveForm(forms.Form):
         super(RoomsreserveForm,self).__init__(*args,**kwargs)
         rooms = Room.objects.all()
         rm = [(r.id,r.roomname) for r in rooms]
-        self.fields['roomname'] = forms.ChoiceField(choices=rm,label="Roomname", required=False)
+        self.fields['roomname'] = forms.ChoiceField(choices=rm,label="Roomname")
     #roomname = forms.ChoiceField(choices=rm,label="Roomname")
+    begin_date = forms.DateTimeField()
+    end_date = forms.DateTimeField()
+    customer_name = forms.CharField(label = 'customer_name',max_length=30,
+            widget = forms.TextInput())
+    phone = forms.CharField(label = 'phone',max_length=30,
+            widget = forms.TextInput())
+    cellphone = forms.CharField(label = 'cellphone',max_length=30,
+            widget = forms.TextInput())
+    email = forms.EmailField(label = 'cellphone',max_length=30,
+            widget = forms.TextInput(),
+            error_messages={'required':u'邮箱不能为空', 'invalid':u'请输入有效邮箱'})
     def clean_roomname(self):
-        roomname = self.cleaned_data['roomname']
-        '''
-        if roomname == '':
+        roomname_id = self.cleaned_data['roomname']
+        if roomname_id == None:
             raise forms.ValidationError('Invalid roomname!')
-        '''
-        return roomname
+        return roomname_id
+
 '''
 class ClassDetailForm(forms.Form):
     def __init__(self,*args,**kwargs):

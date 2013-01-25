@@ -7,6 +7,6 @@ class RoomAdmin(admin.ModelAdmin):
 admin.site.register(Room, RoomAdmin)
 
 class ReservationAdmin(admin.ModelAdmin):
-	list_display = ('customer', 'room', 'date_created', 'deadline', 'description')
+	list_display = ('customer', 'room', 'begin_date', 'end_date', 'deadline', 'description')
 
 admin.site.register(Reservation, ReservationAdmin)
