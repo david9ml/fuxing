@@ -1,5 +1,9 @@
+import logging
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from fuxing.activity.models import Activity
+
+logger = logging.getLogger(__name__)
 
 def info(request):
     return render_to_response('activity_info.html', context_instance=RequestContext(request))
@@ -9,6 +13,22 @@ def admin(request):
 
 def activity(request):
     return render_to_response('activity.html', context_instance=RequestContext(request))
+
+def getall_activities(request):
+    logger.info("Getting all activities")
+    activities = Activity.objects.all()
+    print activities
+    for a in activities:
+        print a.date
+    response = render_to_response('getall_activities.json',
+                                  {'activities': activities},
+                                  context_instance=RequestContext(request))
+    response['Content-Type'] = 'text/plain; charset=utf-8'
+    response['Cache-Control'] = 'no-cache'
+    return response
+
+
+
 
 '''
 import logging

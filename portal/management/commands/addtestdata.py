@@ -1,3 +1,4 @@
+#coding=utf-8
 from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
 #from django.utils.html import strip_tags
@@ -32,10 +33,10 @@ class Command(BaseCommand):
             room.save()
         activities = []
         try:
-            activities.append(Activity.objects.create(activityname='talk show contest1', pic_intro='/user/pictures', txt_intro='activities_text'))
-            activities.append(Activity.objects.create(activityname='talk show contest2', pic_intro='/user/pictures', txt_intro='activities_text'))
-            activities.append(Activity.objects.create(activityname='talk show contest3', pic_intro='/user/pictures', txt_intro='activities_text'))
-            activities.append(Activity.objects.create(activityname='talk show contest4', pic_intro='/user/pictures', txt_intro='activities_text'))
+            activities.append(Activity.objects.create(activityname=u'10:00 am-微软ceo做客', pic_intro='/user/pictures', txt_intro='activities_text'))
+            activities.append(Activity.objects.create(activityname=u'1:00 pm-oracle lecture', pic_intro='/user/pictures', txt_intro='activities_text'))
+            activities.append(Activity.objects.create(activityname=u'talk show contest3', pic_intro='/user/pictures', txt_intro='activities_text'))
+            activities.append(Activity.objects.create(activityname=u'talk show contest4', pic_intro='/user/pictures', txt_intro='activities_text'))
         except:
             pass
         try:
