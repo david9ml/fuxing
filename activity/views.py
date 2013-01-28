@@ -6,7 +6,14 @@ from fuxing.activity.models import Activity
 logger = logging.getLogger(__name__)
 
 def info(request):
-    return render_to_response('activity_info.html', context_instance=RequestContext(request))
+    if request.method == "POST":
+        return render_to_response('activity_info.html', context_instance=RequestContext(request))
+    else:
+        activity_id = request.GET.get('id')
+        print "!!!!!!!!!!!!!!!!"+str(activity_id)
+        activity = Activity.objects.get(id=activity_id)
+        txt_intro = activity.txt_intro.replace('\n', '</br>')
+        return render_to_response('activity_info.html', {'activity': activity, 'txt_intro': txt_intro}, context_instance=RequestContext(request))
 
 def admin(request):
     return render_to_response('activity_admin.html', context_instance=RequestContext(request))
