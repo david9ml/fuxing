@@ -28,11 +28,11 @@ def roomsreserve(request):
             logger.info("phone:%s" %phone)
             logger.info("cellphone:%s" %cellphone)
             logger.info("email:%s" %email)
-            user = User.objects.get(username=customer_name)
-            if user is None:
+            user = User.objects.filter(username=customer_name)
+            if not user:
                 new_user = User.objects.create_user(customer_name, email, '1')
                 customer = Customer.objects.create(user=new_user, phone = phone, cellphone=cellphone, addition='not defined')
-                Customer.save()
+                customer.save()
             else:
                 customer = Customer.objects.get(user=user, phone = phone, cellphone=cellphone, addition='not defined')
             try:
