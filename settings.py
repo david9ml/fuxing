@@ -4,11 +4,8 @@ import sys
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 PROJECTPATH = os.path.dirname(__file__)
-UPLOADFOLDER = os.path.join(PROJECTPATH, "images/questionimages")
-UPLOADPREFIX = 'questionimages'
-THUMBNAILFOLDER = os.path.join(PROJECTPATH, "images/thumbnails")
-GENERATED_IMG = os.path.join(PROJECTPATH, "images/generated_img")
-THUMBNAILPREFIX = 'thumbnails'
+ROOMS_PICTURE = os.path.join(PROJECTPATH, "images/rooms")
+ACTIVITIES_PICTURE = os.path.join(PROJECTPATH, "images/activities")
 
 LOGIN_URL = "/accounts/login/"
 

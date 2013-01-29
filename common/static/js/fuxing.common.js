@@ -1,3 +1,10 @@
+/*
+ *
+ *yanchao727@gmail.com
+ *
+ *2013/1/29
+*/
+
 $(function(){
 	$("#chinese_link").css("cursor","pointer").click(function(){
 		var urlString = window.location.toString();
