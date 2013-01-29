@@ -33,15 +33,27 @@ def roomsreserve(request):
                 new_user = User.objects.create_user(customer_name, email, '1')
                 customer = Customer.objects.create(user=new_user, phone = phone, cellphone=cellphone, addition='not defined')
                 customer.save()
+                try:
+                    res = Reservation.objects.create(customer=customer, room=Room.objects.get(pk=roomname_id), begin_date=begin_date, end_date=end_date, description='none')
+                    res.save()
+                except Exception, e:
+                    print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+                    print e
+                    print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+
             else:
-                customer = Customer.objects.get(user=user, phone = phone, cellphone=cellphone, addition='not defined')
-            try:
-                res = Reservation.objects.create(customer=customer, room=Room.objects.get(pk=roomname_id), begin_date=begin_date, end_date=end_date, description='none')
-                res.save()
-            except Exception, e:
-                print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-                print e
-                print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+                print user
+                print user[0]
+                Customer.objects.filter(user=user[0]).update(phone = phone, cellphone=cellphone, addition='not defined')
+                customer = Customer.objects.get(user=user[0])
+                print customer
+                try:
+                    res = Reservation.objects.create(customer=customer, room=Room.objects.get(pk=roomname_id), begin_date=begin_date, end_date=end_date, description='none')
+                    res.save()
+                except Exception, e:
+                    print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+                    print e
+                    print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 
     else:
         form = RoomsreserveForm(initial={'roomname':'RoomNotSelected'})
