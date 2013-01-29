@@ -42,10 +42,10 @@
 			
 			/************************Andy Yan***********************************/
 			
-			var events = [ 	{ "EventID": 1, "StartDateTime": new Date(2013, 0, 12), "Title": "10:00 pm - EventTitle1", "URL": "events_info.html", "Description": "This is a sample event description", "CssClass": "Meeting" },
-							{ "EventID": 2, "Date": "2013-01-28T00:00:00.0000000", "Title": "9:30 pm - this is a much longer title", "URL": "events_info.html", "Description": "This is a sample event description", "CssClass": "Meeting" },
-							{ "EventID": 3, "StartDateTime": new Date(2013, 0, 20), "Title": "9:30 pm - this is a much longer title", "URL": "events_info.html", "Description": "This is a sample event description", "CssClass": "Meeting" },
-							{ "EventID": 4, "StartDateTime": "2013-04-14", "Title": "9:30 pm - this is a much longer title", "URL": "events_info.html", "Description": "This is a sample event description", "CssClass": "Meeting" }
+			var events = [ 	{ "EventID": 1, "StartDateTime": new Date(2013, 0, 18), "Title": "19:30——联客答谢会", "URL": "http://www.douban.com/event/18121298/", "Description": "This is a sample event description", "CssClass": "Meeting" },
+							{ "EventID": 2, "Date": "2013-01-27T00:00:00.0000000", "Title": "迎春联欢会", "URL": "http://www.douban.com/event/18146349/", "Description": "This is a sample event description", "CssClass": "Meeting" },
+							{ "EventID": 3, "StartDateTime": new Date(2013, 1, 20), "Title": "9:30 pm - this is a much longer title", "URL": "#", "Description": "This is a sample event description", "CssClass": "Meeting" },
+							{ "EventID": 4, "StartDateTime": "2013-04-14", "Title": "9:30 pm - this is a much longer title", "URL": "#", "Description": "This is a sample event description", "CssClass": "Meeting" }
 			];
 			
 			//var newoptions = { };
