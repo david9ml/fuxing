@@ -26,33 +26,42 @@ Released   : 20130111
 		<div id="logo">
 			<h1><a href="#">People Linked</a></h1>
 			<!--<span>Template Design by <a href="http://www.freecsstemplates.org">FCT</a></span>-->
-            <span><a href="logout.html">登出</a></span>
+            <span><a href="../en/index.html">English</a></span>
 		</div>
 	</div>
 	<div id="menu">
 		<ul>
-			<li><a href="index.html" accesskey="1" title="">修改登录密码</a></li>
-			<li><a href="places.html" accesskey="2" title="">房间信息</a></li>
-            <li><a href="reservation.html" accesskey="3" title="">预定信息</a></li>
-			<li><a href="events.html" accesskey="4" title="">发布新活动</a></li>
-			<li class="active"><a href="#" accesskey="5" title="">修改活动图片</a></li>
+			<li  class="active"><a href="#" accesskey="1" title="">场地介绍</a></li>
+			<li><a href="events.html" accesskey="2" title="">近期活动</a></li>
+			<li><a href="partners.html" accesskey="3" title="">合作伙伴</a></li>
+			<li><a href="contacts.html" accesskey="4" title="">联系我们</a></li>
 		</ul>
 	</div>
     <div id="page">
-        <form action="">
-        <p>选择替换图片：
+		<form action="">
+        <fieldset>
+        <legend>预定信息</legend>
+        <p>预订房间：
         <select name="room">
-        <option value="">图片1</option>
-        <option value="">图片2</option>
-        <option value="">图片3</option>
-        <option value="">图片4</option>
-        <option value="">图片5</option>
-        <option value="">图片6</option>
-        <option value="">图片7</option>
-        <option value="">图片8</option>
+        <option value="">办公室A</option>
+        <option value="">办公室B</option>
+        <option value="">办公室C</option>
+        <option value="">办公室D</option>
+        <option value="">办公室E</option>
+        <option value="">小会议室</option>
         </select>
         </p>
-        <p>选择图片：<input name="room_picture" type="file" /></p>
+        <p>开始日期：<input name="start_date" type="text" /> （日期格式：2013-1-1，代表2013年1月1日）</p>
+        <p>结束日期：<input name="end_date" type="text" /></p>
+        </fieldset>
+        <fieldset>
+        <legend>客户信息</legend>
+        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 姓名：<input name="guest_admin" type="text" /></p>
+        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 电话：<input name="guest_tel" type="text" /></p>
+        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 手机：<input name="guest_tel" type="text" /></p>
+        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 邮箱：<input name="guest_email" type="text" /></p>
+        </fieldset>
+        <p><input type="submit" value="提交" /></p>
         </form>
     </div>
 	<div id="footer">
