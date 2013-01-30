@@ -40,10 +40,10 @@ class Command(BaseCommand):
         fh.close()
         txt_indro = filetext
         try:
-            activities.append(Activity.objects.create(activityname=u'10:00 am-微软ceo做客', pic_intro='/user/pictures', date='2013-01-12', txt_intro=txt_indro))
-            activities.append(Activity.objects.create(activityname=u'1:00 pm-oracle lecture', pic_intro='/user/pictures', date='2013-01-15',  txt_intro=txt_indro))
-            activities.append(Activity.objects.create(activityname=u'talk show contest3', pic_intro='/user/pictures', date='2013-01-20',  txt_intro=txt_indro))
-            activities.append(Activity.objects.create(activityname=u'talk show contest4', pic_intro='/user/pictures', date='2013-01-31',  txt_intro=txt_indro))
+            activities.append(Activity.objects.create(activityname=u'10:00 am-微软ceo做客', pic_intro='/user/pictures', date='2013-01-12', txt_intro=txt_indro, url_link='http://www.douban.com/event/18121298/'))
+            activities.append(Activity.objects.create(activityname=u'1:00 pm-oracle lecture', pic_intro='/user/pictures', date='2013-01-15',  txt_intro=txt_indro, url_link='http://www.douban.com/event/18121298/'))
+            activities.append(Activity.objects.create(activityname=u'talk show contest3', pic_intro='/user/pictures', date='2013-01-20',  txt_intro=txt_indro, url_link='http://www.douban.com/event/18121298/'))
+            activities.append(Activity.objects.create(activityname=u'talk show contest4', pic_intro='/user/pictures', date='2013-01-31',  txt_intro=txt_indro, url_link='http://www.douban.com/event/18121298/'))
         except:
             pass
         try:

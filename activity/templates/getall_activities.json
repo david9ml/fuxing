@@ -1,9 +1,9 @@
 [
     {% for a in activities %}
     {% if forloop.last %}
-    {"EventID": {{a.id}}, "Date":"{{ a.date|date:'Y-m-d' }}", "Title":"{{a.activityname}}", "URL":"/activity/info/?id={{ a.id }}", "description":"", "CssClass": "Meeting" }
+    {"EventID": {{a.id}}, "Date":"{{ a.date|date:'Y-m-d' }}", "Title":"{{a.activityname}}", "URL":"{{ a.url_link }}", "description":"", "CssClass": "Meeting" }
     {% else %}
-    {"EventID": {{a.id}}, "Date":"{{ a.date|date:'Y-m-d' }}", "Title":"{{a.activityname}}", "URL":"/activity/info/?id={{ a.id }}", "description":"", "CssClass": "Meeting" },
+    {"EventID": {{a.id}}, "Date":"{{ a.date|date:'Y-m-d' }}", "Title":"{{a.activityname}}", "URL":"{{ a.url_link }}", "description":"", "CssClass": "Meeting" },
     {% endif %}
     {% endfor %}
 ]
