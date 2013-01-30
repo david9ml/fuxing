@@ -1,6 +1,6 @@
-{% extends "base.html" %}
+{% extends "theme_00.html" %}
 
-{% block title %}HOME{% endblock%}
+{% block title %}联客 People Linked<{% endblock%}
 {% block head %}
 <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/core.css">
 	<style type="text/css" media="screen">
@@ -8,16 +8,42 @@
 		#jMonthCalendar .Birthday { background-color: #DD00FF;}
 		/*#jMonthCalendar #Event_3 { background-color:#0000FF; }*/
 	</style>
+<script type="text/javascript" src="{{ STATIC_URL }}js/fuxing_activity.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.slidertron-1.1.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jMonthCalendar.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/date.js"></script>
 {% endblock %}
 
-{% block content %}
-<div id="wrap">
-	<div class="container">
+{% block inner_content %}
+    <div id="banner">
+		<div id="slider">
+			<div class="viewer">
+				<div class="reel">
+					<div class="slide"> <img src="../images/event01.jpg" width="900" height="500" alt="event" /> </div>
+					<div class="slide"> <img src="../images/event02.jpg" width="900" height="500" alt="event" /> </div>
+                    <div class="slide"> <img src="../images/event03.jpg" width="900" height="500" alt="event" /> </div>
+                    <div class="slide"> <img src="../images/event04.jpg" width="900" height="500" alt="event" /> </div>
+                    <div class="slide"> <img src="../images/event05.jpg" width="900" height="500" alt="event" /> </div>
+					<div class="slide"> <img src="../images/event06.jpg" width="900" height="500" alt="event" /> </div>
+                    <div class="slide"> <img src="../images/event07.jpg" width="900" height="500" alt="event" /> </div>
+                    <div class="slide"> <img src="../images/event08.jpg" width="900" height="500" alt="event" /> </div>
+                </div>
+			</div>
+		</div>
+        <!--
+		<script type="text/javascript">
+				$('#slider').slidertron({
+					viewerSelector: '.viewer',
+					reelSelector: '.viewer .reel',
+					slidesSelector: '.viewer .reel .slide',
+					advanceDelay: 3000,
+					speed: 'slow'
+				});
+		</script>
+        -->
+	</div>
     
-	<div id="jMonthCalendar"></div>
-	
+    <div id="page">
+    	<div id="jMonthCalendar"></div>
     </div>
-</div>
 {% endblock %}

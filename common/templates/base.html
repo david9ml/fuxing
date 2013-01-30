@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}css/default.css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Archivo+Narrow:400,700" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/fuxing.common.js"></script>
@@ -16,11 +17,14 @@
 	<script type="text/javascript" src="{{ STATIC_URL }}js/fuxing.ui.js"></script>
     -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="People Linked, 联客, 复兴办公社" />
 	<title>{% block title %}{% endblock %}</title>
 	{% block head %}{% endblock %}
 </head>
 <body>
-	{% include 'head.html' %}
+    <!--
+    {% include 'head.html' %}
+    -->
 	{% block content %}{% endblock %}
 	{% include 'foot.html' %}
 </body>
