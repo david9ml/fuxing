@@ -147,6 +147,7 @@ INSTALLED_APPS = (
     'fuxing.room',
     'fuxing.activity',
     'fuxing.common',
+    #'fuxing.django_conch',
     'debug_toolbar',
 )
 

@@ -1,4 +1,4 @@
-settings_local.py
+/settings_local.py
 *.bk
 *.pyc
 *.swp
