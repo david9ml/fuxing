@@ -142,7 +142,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'django_nose',
+    #'django_nose',
     'fuxing.portal',
     'fuxing.room',
     'fuxing.activity',
