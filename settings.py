@@ -148,7 +148,7 @@ INSTALLED_APPS = (
     'fuxing.activity',
     'fuxing.common',
     #'fuxing.django_conch',
-    'debug_toolbar',
+    #'debug_toolbar',
 )
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
