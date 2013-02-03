@@ -7,6 +7,6 @@
 ;(function($, undef) {
 
     $(function(){
-                $('#menu_02').addClass('active');
+                $('#menu_00').addClass('active');
 	});
 })(jQuery);

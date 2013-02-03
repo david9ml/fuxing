@@ -3,21 +3,22 @@
 <div id="wrapper" class="container">
 	<div id="header">
 		<div id="logo">
-			<h1><a href="#">People Linked</a></h1>
+            <h1><a href="{% url home %}">People Linked</a></h1>
 			<!--<span>Template Design by <a href="http://www.freecsstemplates.org">FCT</a></span>-->
             <span><a href="../en/index.html">English</a></span>
 		</div>
 	</div>
 	<div id="menu">
 		<ul>
-			<li id="menu_00" ><a href="index.html" accesskey="1" title="">场地介绍</a></li>
-            <li id="menu_01" ><a href="#" accesskey="2" title="">近期活动</a></li>
-			<li id="menu_02" ><a href="partners.html" accesskey="3" title="">合作伙伴</a></li>
-			<li id="menu_03" ><a href="contacts.html" accesskey="4" title="">联系我们</a></li>
+			<li id="menu_00" ><a href="{% url home %}" accesskey="1" title="">场地介绍</a></li>
+            <li id="menu_01" ><a href="{% url activity %}" accesskey="2" title="">近期活动</a></li>
+            <li id="menu_02" ><a href="{% url partners %}" accesskey="3" title="">合作伙伴</a></li>
+            <li id="menu_03" ><a href="{% url contacts %}" accesskey="4" title="">联系我们</a></li>
 		</ul>
 	</div>
 {% block inner_content %}
 {% endblock %}
+{% include 'foot.html' %}
 </div>
  
 {% endblock %}

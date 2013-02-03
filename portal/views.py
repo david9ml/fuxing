@@ -1,7 +1,14 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+
 def home(request):
     return render_to_response('home.html', context_instance=RequestContext(request))
+
+def contacts(request):
+    return render_to_response('contacts.html', context_instance=RequestContext(request))
+
+def partners(request):
+    return render_to_response('partners.html', context_instance=RequestContext(request))
 
 '''
 import logging
