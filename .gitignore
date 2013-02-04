@@ -1,4 +1,6 @@
 /settings_local.py
+/static/images/activities
+/static/images/rooms
 *.bk
 *.pyc
 *.swp
