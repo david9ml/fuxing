@@ -1,5 +1,4 @@
 # coding: utf-8
-
 from django.db import models
 from fuxing.portal.models import Customer
 import datetime
@@ -12,7 +11,10 @@ class Room(models.Model):
     txt_intro = models.CharField(max_length=30, verbose_name='txt_introduction')
 
     class Meta:
-        verbose_name = 'Room'
+        verbose_name = u'房间'
+        verbose_name_plural = u'房间'
+        app_label = "room"
+        ordering = ['-date_created']
 
     def __unicode__(self):
         return u'[Room:%s]' % self.roomname
@@ -28,7 +30,10 @@ class Reservation(models.Model):
     description = models.CharField(max_length=1000, blank=True, null=True, verbose_name=u'Description')
 
     class Meta:
-        verbose_name = u'Reservation'
+        verbose_name = u'预定'
+        verbose_name_plural = u'预定'
+        app_label = "room"
+        ordering = ['-date_created']
 
     def __unicode__(self):
         return u'%s, %s, %s' % (self.id, self.room ,self.customer)

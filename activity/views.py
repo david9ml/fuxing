@@ -26,7 +26,7 @@ def getall_activities(request):
     activities = Activity.objects.all()
     print activities
     for a in activities:
-        print a.date
+        print a.date_created
     response = render_to_response('getall_activities.json',
                                   {'activities': activities},
                                   context_instance=RequestContext(request))
