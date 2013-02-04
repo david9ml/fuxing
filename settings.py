@@ -1,7 +1,7 @@
 import os
 import sys
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 PROJECTPATH = os.path.dirname(__file__)
 ROOMS_PICTURE = os.path.join(PROJECTPATH, "images/rooms")
