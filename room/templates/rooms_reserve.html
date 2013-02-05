@@ -1,16 +1,14 @@
-{% extends "base.html" %}
+{% extends "theme_00.html" %}
 
-{% block title %}HOME{% endblock%}
+{% block title %}联客 People Linked{% endblock%}
 {% block head %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/fuxing_contacts.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.slidertron-1.1.js"></script>
 {% endblock %}
 
-{% block content %}
-
-
-<div id="wrap">
-	<div class="container">
+{% block inner_content %}
 	
-    <div class="content">
+    <div id="page">
         <form id="roomsreserve" class="roomsform" action="" method="POST">{% csrf_token %}
         <fieldset>
         <legend>预定信息</legend>
@@ -86,6 +84,4 @@
         </form>
     </div>
     
-    </div>
-</div>
 {% endblock %}
