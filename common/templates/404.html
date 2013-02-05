@@ -1,9 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-	<title>Page not found</title>
-</head>
-	<h1>Page not found!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!404页面</h1>
-	<p>Sorry, but the requested page could not be found.</p>
-</body>
-</html>
+{% extends "theme_00.html" %}
+
+{% block title %}联客 People Linked<{% endblock%}
+{% block head %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/fuxing_home.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.slidertron-1.1.js"></script>
+{% endblock %}
+
+{% block inner_content %}
+	<div id="page">
+		<h2>404 抱歉，页面不存在</h2>
+	</div>
+{% endblock %}
