@@ -17,4 +17,12 @@ $(function(){
 		else{
 		}
 	});
+    $('#slider').slidertron({
+        viewerSelector: '.viewer',
+        reelSelector: '.viewer .reel',
+        slidesSelector: '.viewer .reel .slide',
+        advanceDelay:4300,
+        speed: 'slow'
+    });
+
 });
