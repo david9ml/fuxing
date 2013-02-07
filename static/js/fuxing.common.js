@@ -2,10 +2,11 @@
  *
  *yanchao727@gmail.com
  *
- *2013/1/29
+ *2013/2/7
 */
 
 $(function(){
+
 	$("#chinese_link").css("cursor","pointer").click(function(){
 		var urlString = window.location.toString();
         if(urlString.search("/cn") == -1){
@@ -17,12 +18,5 @@ $(function(){
 		else{
 		}
 	});
-    $('#slider').slidertron({
-        viewerSelector: '.viewer',
-        reelSelector: '.viewer .reel',
-        slidesSelector: '.viewer .reel .slide',
-        advanceDelay:4300,
-        speed: 'slow'
-    });
 
 });

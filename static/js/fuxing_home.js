@@ -8,5 +8,6 @@
 
     $(function(){
                 $('#menu_00').addClass('active');
+                fuxing.ui.runSlider();
 	});
 })(jQuery);
