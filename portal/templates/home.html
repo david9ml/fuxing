@@ -34,14 +34,14 @@
 			<div>
 				<h2>房间信息</h2>
 					<ul class="style1">
-						<li class="first"><a href="rooms/public_area.html">公共区域——可容纳40人</a></li>
-                        <li><a href="rooms/small_meeting_room.html">小办公室——也可作洽谈室</a></li>
-						<li><a href="rooms/big_meeting_room.html">大会议室——配备可拉门</a></li>
-						<li><a href="rooms/room_a.html">办公室A——方向朝南</a></li>
-						<li><a href="rooms/room_b.html">办公室B——可自由搭配内部装饰</a></li>
-						<li><a href="rooms/room_c.html">办公室C——可自由搭配内部装饰</a></li>
-						<li><a href="rooms/room_d.html">办公室D——也可作培训小教室</a></li>
-						<li><a href="rooms/room_e.html">办公室E——也可作培训小教室</a></li>
+						<li class="first"><a href="{% url room_public %}">公共区域——可容纳40人</a></li>
+                        <li><a href="{% url room_small %}">小办公室——也可作洽谈室</a></li>
+						<li><a href="{% url room_big %}">大会议室——配备可拉门</a></li>
+                        <li><a href="{% url room_a %}">办公室A——方向朝南</a></li>
+						<li><a href="{% url room_b %}">办公室B——可自由搭配内部装饰</a></li>
+						<li><a href="{% url room_c %}">办公室C——可自由搭配内部装饰</a></li>
+						<li><a href="{% url room_d %}">办公室D——也可作培训小教室</a></li>
+						<li><a href="{% url room_e %}">办公室E——也可作培训小教室</a></li>
 					</ul>
 			
 			</div>

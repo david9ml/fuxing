@@ -10,6 +10,30 @@ logger = logging.getLogger(__name__)
 def listall(request):
     return render_to_response('listallroom.html', context_instance=RequestContext(request))
 
+def room_a(request):
+    return render_to_response('room_a.html', context_instance=RequestContext(request))
+
+def room_b(request):
+    return render_to_response('room_b.html', context_instance=RequestContext(request))
+
+def room_c(request):
+    return render_to_response('room_c.html', context_instance=RequestContext(request))
+
+def room_d(request):
+    return render_to_response('room_d.html', context_instance=RequestContext(request))
+
+def room_e(request):
+    return render_to_response('room_e.html', context_instance=RequestContext(request))
+
+def room_small(request):
+    return render_to_response('room_small.html', context_instance=RequestContext(request))
+
+def room_big(request):
+    return render_to_response('room_big.html', context_instance=RequestContext(request))
+
+def room_public(request):
+    return render_to_response('room_public.html', context_instance=RequestContext(request))
+
 def roomsreserve(request):
     if request.method == 'POST':
         form = RoomsreserveForm(request.POST)
