@@ -11,6 +11,8 @@ urlpatterns = patterns('fuxing.room.views',
     url(r'^room_small/$|^room_small/cn/$','room_small',name='room_small'),
     url(r'^room_big/$|^room_big/cn/$','room_big',name='room_big'),
     url(r'^room_public/$|^room_public/cn/$','room_public',name='room_public'),
+    url(r'^reserve_success/$|^reserve_success/cn/$','reserve_success',name='reserve_success'),
+    url(r'^reserve_failure/$|^reserve_failure/cn/$','reserve_failure',name='reserve_failure'),
     #url(r'^delete/$',ClassroomDelete.as_view(),name='classroom_delete'),
 	)
 

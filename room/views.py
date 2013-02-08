@@ -34,6 +34,12 @@ def room_big(request):
 def room_public(request):
     return render_to_response('room_public.html', context_instance=RequestContext(request))
 
+def reserve_success(request):
+    return render_to_response('reserve_success.html', context_instance=RequestContext(request))
+
+def reserve_failure(request):
+    return render_to_response('reserve_failure.html', context_instance=RequestContext(request))
+
 def roomsreserve(request):
     if request.method == 'POST':
         form = RoomsreserveForm(request.POST)
@@ -64,6 +70,8 @@ def roomsreserve(request):
                     print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
                     print e
                     print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+                    return render_to_response('reserve_failure.html', context_instance=RequestContext(request))
+                return render_to_response('reserve_success.html', context_instance=RequestContext(request))
 
             else:
                 print user
@@ -78,9 +86,12 @@ def roomsreserve(request):
                     print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
                     print e
                     print '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+                    return render_to_response('reserve_failure.html', context_instance=RequestContext(request))
+                return render_to_response('reserve_success.html', context_instance=RequestContext(request))
 
     else:
         form = RoomsreserveForm(initial={'roomname':'RoomNotSelected'})
+        return render_to_response('rooms_reserve.html', {'form':form}, context_instance=RequestContext(request))
     return render_to_response('rooms_reserve.html', {'form':form}, context_instance=RequestContext(request))
 
 '''
