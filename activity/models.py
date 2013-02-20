@@ -1,6 +1,5 @@
 # coding: utf-8
 from django.db import models
-#from fuxing.portal.models import Customer
 import datetime
 
 class Activity(models.Model):
