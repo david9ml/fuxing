@@ -4,7 +4,7 @@ from django.db import models
 import datetime
 
 class Activity(models.Model):
-    activityname = models.TextField(max_length=200, verbose_name='ActivityName')
+    activityname = models.CharField(max_length=200, verbose_name='ActivityName')
     date_created = models.DateTimeField('date', default=datetime.datetime.now)
     pic_intro = models.CharField(max_length=50, verbose_name='Pic_introduction', null=True, blank=True)
     url_link = models.CharField(max_length=50, verbose_name='Url_link', null=True, blank=True)
